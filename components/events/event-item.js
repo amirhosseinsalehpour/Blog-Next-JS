@@ -1,5 +1,7 @@
-import Link from "next/link";
+// import Link from "next/link";
+"use client";
 import classes from "./event-item.module.css";
+import Button from "../ui/button";
 function EventItem(props) {
   const { title, image, data, location, id } = props;
   const humanReadableDate = new Date(data).toLocaleDateString("en-US", {
@@ -21,7 +23,7 @@ function EventItem(props) {
             <address>{location}</address>
           </div>
           <div className={classes.action}>
-            <Link href={exploreLink}>Explore Event</Link>
+            <Button link={exploreLink}>Explore Event</Button>
           </div>
         </div>
       </div>
